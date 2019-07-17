@@ -1,0 +1,444 @@
+
+@import url('https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed&display=swap');
+
+/*
+font-family: 'Roboto Condensed', sans-serif;
+font-family: 'Roboto', sans-serif;
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
+
+/* font-family: 'Pacifico', cursive; */
+
+@import url('https://fonts.googleapis.com/css?family=Ramabhadra&display=swap');
+
+/* font-family: 'Ramabhadra', sans-serif; */
+
+
+@import url('https://fonts.googleapis.com/css?family=Anton|Open+Sans+Condensed:300&display=swap');
+
+/*
+font-family: 'Open Sans Condensed', sans-serif;
+font-family: 'Anton', sans-serif;
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Acme|Bangers|Great+Vibes|Indie+Flower|Lobster|Merriweather&display=swap');
+
+/*
+font-family: 'Merriweather', serif;
+font-family: 'Indie Flower', cursive;
+font-family: 'Lobster', cursive;
+font-family: 'Acme', sans-serif;
+font-family: 'Great Vibes', cursive;
+font-family: 'Bangers', cursive;
+*/
+
+*, *::after, *::before {
+    box-sizing:border-box;
+    padding:0;
+}
+
+
+html {
+    /*width:1920px;
+    height:950px;
+    overflow:hidden;
+    position:relative;*/
+    font-family: 'Roboto Condensed', sans-serif;
+
+}
+
+body {
+    width:1920px;
+    height:950px;
+    overflow:hidden;
+    position:relative;
+    background-size:cover;
+}
+
+body.theme-1 {
+    background-color:floralwhite;
+}
+
+body.theme-2 {
+    background-image:url('stuff/animated2.gif');
+}
+
+body.theme-3 {
+    background-image:url('stuff/static1.png');
+}
+
+body.theme-4 {
+    background-image:url('stuff/backgrounds/background8.jpg');
+}
+
+body.theme-5 {
+    background-image:url('stuff/backgrounds/background9.jpg');
+}
+
+body.theme-6 {
+    background-image:url('stuff/backgrounds/background10.jpg');
+}
+
+body.newBackground {
+    transition:all 0.1s ease-out;
+}
+
+.lang-selector {
+    display:block;
+    width:60px;
+    height:60px;
+    overflow:hidden;
+    /**/
+    position:absolute;
+    top:60px;
+    right:20px;
+    z-index:999;
+    /**/
+    background-color:rgba(0, 0, 0, 0.5);
+    border-radius:7px;
+    /**/
+    transition:all 0.4s ease-out;
+}
+
+.lang-selector:hover {
+    width:320px;
+}
+
+.lang-selector .flag-picker {
+    display:inline-block;
+    margin:10px 10px;
+    cursor:pointer;
+    opacity:0.4;
+    transition:all 0.2s ease-out;
+}
+
+.lang-selector .flag-picker:hover {
+    opacity:0.7;
+}
+
+.lang-selector .flag-picker.selected {
+    opacity:1;
+}
+
+
+.bar {
+    /*border:1px solid yellow;*/
+    width:100%;
+    height:150px;
+    /**/
+    position:relative;
+    z-index:998;
+    top:-100px;
+    left:0;    
+}
+
+.bar-o, .bar-u {
+    transition:all 0.3s ease-out;
+}
+
+.bar .forms {
+    width: 100%;
+    height: 95px;
+    /**/
+    margin: 0;
+    padding: 10px 40px;
+    /**/
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.bar .forms input {
+    width:120px;
+}
+
+.bar .forms select {
+    width:150px;
+}
+
+.bar .bar-toggler {
+    /*border:1px solid red;*/
+    display:block;
+    content:url('stuff/arrow_new1.png');
+    width:50px;
+    height:50px;
+    opacity:0.9;
+    /**/
+    position:absolute;
+    bottom:0;
+    left:70px;
+    /**/
+    overflow:hidden;
+}
+
+.bar .bar-toggler-u {
+    content:url('stuff/arrows/arrow_down.png');
+}
+
+.bar .bar-toggler-o {
+    content:url('stuff/arrows/arrow_up.png');
+    opacity:0.6;
+}
+
+.bar div {
+    margin-left:15px;
+    margin-right:15px;
+    float:left;
+}
+
+.bar button {
+    margin-top:17px;
+}
+
+.bar .intro {
+    font-family: 'Roboto', sans-serif;
+    font-weight:bold;
+    font-size:1.5rem;
+    text-align:Center;
+    line-height:30px;
+    padding:10px;
+}
+
+
+
+
+
+
+/* MODAL*/
+
+
+.modal .form-group {
+    display:inline-block;
+    margin:10px;
+    color:gray;
+}
+
+.modal .alert {
+    color:rgba(255, 0, 0, 0.7)
+}
+
+.modal .form-group label {
+    color:rgba(0, 0, 0, 0.7);
+}
+
+.modal .form-group input {
+    color:black;
+    padding:5px;
+}
+
+.modal .form-group input::placeholder {
+    color:rgba(0, 0, 0, 0.4);
+}
+
+
+
+
+
+
+
+/* THE CLOCK */
+
+
+.clock {
+    /*border:1px solid red;*/
+    /**/
+    min-width:700px;
+    min-height:400px; /*used to be just height*/
+    /**/
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    /**/
+    padding: 30px;
+}
+
+.clock .dc, .clock .date {
+    /*cursor:wait;*/
+    cursor:help;
+}
+
+
+.clock .dc::selection, .clock .dc p::selection, .clock .dc div::selection, .clock .date::selection {
+    background-color:none; /*doesn't work*/
+}
+
+.clock.theme-1 {
+    font-family: 'Roboto Condensed', sans-serif;
+    text-align:left;
+    color:black;
+    min-width:700px;
+    min-height:400px;
+}
+
+.clock.theme-1 .dc p {
+    font-size:110px;
+}
+
+.clock.theme-1 .dc div {
+    font-size:4rem;
+}
+
+.clock.theme-1 .dc div span {
+    color: rgb(54, 113, 201);
+}
+
+.clock.theme-1 .date {
+    font-size:30px;
+}
+
+.clock.theme-2 {
+    font-family: 'Pacifico', cursive;
+    background-color: rgba(140, 140, 140, 0.3);
+    border-radius: 30px;
+    border: 1px solid white;
+    text-align: center;
+    color: #f0f8ff;
+    min-width:700px;
+    min-height:400px;
+}
+
+.clock.theme-2 .dc div {
+    font-size:5rem;
+}
+
+.clock.theme-2 .dc div span {
+    color:#ffff00;
+}
+
+
+.clock.theme-3 {
+    font-family: 'Ramabhadra', sans-serif;
+    text-align: left;
+    color:rgba(0, 0, 0, 0.7);
+    min-width:700px;
+    min-height:400px;
+}
+
+.clock.theme-3 .dc div {
+    font-size:4rem;
+}
+
+.clock.theme-3 .dc div span {
+    color:rgba(0, 0, 0, 1);
+}
+
+
+.clock.theme-4 {
+    border:2px solid yellow;
+    border-radius:7px;
+    background-color:rgb(0, 77, 77, 0.4);
+    font-family: 'Roboto Condensed', sans-serif;
+    color:yellow;
+    text-align:left;
+    min-width:700px;
+    min-height:400px;
+}
+
+.clock.theme-4 .dc div {
+    font-size:5rem;
+}
+
+.clock.theme-4 .dc div span {
+    color:#95F1A8;
+}
+
+
+.clock.theme-5 {
+    border: 5px solid blueviolet;
+    border-radius: 100%;
+    background-color: rgba(256, 256, 256, 0.9);
+    font-family: 'Lobster', cursive;
+    color: #CE369B;
+    text-align:center;
+    min-width: 500px;
+    min-height: 400px;
+    top: 70%;
+}
+
+.clock.theme-5 .dc {
+    margin-top:50px;
+}
+
+.clock.theme-5 .dc div {
+    font-size:4rem;
+}
+
+.clock.theme-5 .dc div span {
+    color:#3FB9EA;
+}
+
+
+.clock.theme-6 {
+    border:7px dashed rgb(255, 251, 100);
+    color: rgb(255, 251, 100);
+    background-color:rgba(256, 256, 256, 0.3);
+    font-family: 'Open Sans Condensed', sans-serif;
+    text-align: left;
+    top:42%;
+    left:40%;
+}
+
+.clock.theme-6 .dc div {
+    font-size:4rem;
+}
+
+.clock.theme-5 .dc div span {
+    color: rgb(6, 255, 242);
+}
+
+.dc {
+    /*border:1px solid blue;*/
+    /**/
+    margin-top:60px;
+    font-size:11rem;
+}
+
+.dc p {
+    margin:0;
+    display:inline-block;
+}
+
+.dc div {
+    display:inline-block;
+    
+}
+
+.dc div * {
+    display:block;
+}
+
+.dc div i {
+    font-size:70%;
+    /*color:black;*/
+}
+
+.dc div span {
+    font-size:100%;
+}
+
+
+.date {
+    /*border:1px solid green;*/
+    /**/
+    margin-top:40px;
+    /**/
+    font-size:3rem;
+}
+
+
+.custom {
+    transition:all 0.1s ease-out;
+}
+
+
+
+
+
+
+
+
+
+/* don't forget to credit the author of the flags with this code <div>Icons made by <a href="https://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/"             title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/"             title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div> */ 
+
+

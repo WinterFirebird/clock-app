@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="main.js"></script>
+    
+    <!-- bootstrap shit -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+  <!--  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+-->
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+
+
+    <title>Clock(6)</title>
+</head>
+<body class="body theme-1" dir="ltr">
+
+    <div class="lang-selector" dir="rtl">
+        <img class="flag-picker selected" alt="en" data-dir="ltr" src="stuff/flags/united-kingdom.png" width="40px" height="40px"/>
+        <img class="flag-picker" alt="hy" data-dir="ltr" src="stuff/flags/armenia.png" width="40px" height="40px"/>
+        <img class="flag-picker" alt="fr" data-dir="ltr" src="stuff/flags/france.png" width="40px" height="40px"/>
+        <img class="flag-picker" alt="ru" data-dir="ltr" src="stuff/flags/russia.png" width="40px" height="40px"/>
+        <img class="flag-picker" alt="ar" data-dir="rtl" src="stuff/flags/arabic.png" width="40px" height="40px"/>
+    </div>
+
+    <div class="bar">
+        <div class="forms">
+            <div class="form-group">
+                <label for="theme">Choose a theme: </label>
+                <select class="form-control theme-selector" id="theme" style="width:150px">
+                    <option value="theme-1" selected>Theme 1</option>
+                    <option value="theme-2">Theme 2</option>
+                    <option value="theme-3">Theme 3</option>
+                    <option value="theme-4">Theme 4</option>
+                    <option value="theme-5">Theme 5</option>
+                    <option value="theme-6">Theme 6</option>
+                </select>
+            </div>
+
+            <div class="intro">
+                ← Pick one of the themes<br>
+                Or create your own →
+            </div>
+
+            <div class="form-group">
+                <label for="c-ibackground">Background image: </label>
+                <select class="form-control ibackground-selector custom-form" id="c-ibackground">
+                    <option value="stuff/backgrounds/background1.gif">Background 1</option>
+                    <option value="stuff/backgrounds/background2.gif">Background 2</option>
+                    <option value="stuff/backgrounds/background3.png">Background 3</option>
+                    <option value="stuff/backgrounds/background4.jpg">Background 4</option>
+                    <option value="stuff/backgrounds/background5.jpg">Background 5</option>
+                    <option value="stuff/backgrounds/background6.jpg">Background 6</option>
+                    <option value="stuff/backgrounds/background7.jpg">Background 7</option>
+                    <option value="stuff/backgrounds/background8.jpg">Background 8</option>
+                    <option value="stuff/backgrounds/background9.jpg">Background 9</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="c-cbackground">Background color: </label>
+                </br>
+                <input type="color" id="c-cbackground" class="custom-form cbackground-selector" style="height:30px;"/> 
+            </div>
+
+            <div class="form-group">
+                <label for="c-color">Font color: </label>
+                </br>
+                <input type="color" id="c-color" class="custom-form color-selector" style="height:30px;"/> 
+            </div>
+
+            <div class="form-group">
+                <label for="c-scolor">Seconds' font color: </label>
+                </br>
+                <input type="color" id="c-scolor" class="custom-form scolor-selector" style="height:30px;"/> 
+            </div>
+
+            <div class="form-group">
+                <label for="c-align">Alignment: </label>
+                <select class="form-control align-selector custom-form" id="c-align">
+                    <option value="left">Left</option>
+                    <option value="center">Center</option>
+                    <option value="right">Right</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="c-font">Font family: </label>
+                <select class="form-control font-selector custom-form" id="c-font">
+                    <option value='Roboto, sans-serif'>Roboto</option>
+                    <option value='"Roboto Condensed", sans-serif'>Roboto Condensed</option>
+                    <option value='"Open Sans Condensed", sans-serif'>Open Sans Condensed</option>
+                    <option value='Anton, sans-serif'>Anton</option>
+                    <option value='Ramabhadra, sans-serif'>Ramabhadra</option>
+                    <option value='Pacifico, cursive'>Pacifico</option>
+                    <option value='Merriweather, serif'>Merriweather</option>
+                    <option value='"Indie Flower", cursive'>Indie Flower</option>
+                    <option value='Lobster, cursive'>Lobster</option>
+                    <option value='Acme, sans-serif'>Acme</option>
+                    <option value='"Great Vibes", cursive'>Great Vibes</option>
+                    <option value='Bangers, cursive'>Bangers</option>
+                </select>
+            </div>
+
+            <div>
+                <button type="button" class="btn btn-light format-switcher">
+                    24/12
+                </button>
+            </div>
+
+            <div>
+                <button type="button" class="btn btn-light advanced-trigger" data-toggle="modal" data-target="#advanced">
+                    Advanced options...
+                </button>
+            </div>
+    </div>
+
+        <div class="bar-toggler bar-toggler-u"></div>
+    </div>
+
+    <div class="modal" id="advanced">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+      
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h2 class="modal-title" style="display:inline-block">Advanced options</h2>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+      
+            <!-- Modal body -->
+            <div class="modal-body">
+                <h3>Edit these styles manually: </h3>
+                <div class="alert">
+                    <strong>Note!</strong> you must be familiar with CSS.
+                </div></br>
+
+                <div class="form-group">
+                    <label for="">Background image: </label>
+                    <input type="text" class="forBody" data-prop="background-image" placeholder=""/>
+                </div>
+                <div class="form-group">
+                    <label for="">Clock font size: </label>
+                    <input type="text" class="forClockDc" data-prop="font-size" placeholder=""/>
+                </div>
+                <div class="form-group">
+                    <label for="">Seconds' font size: </label>
+                    <input type="text" class="forSpan" data-prop="font-size" placeholder=""/>
+                </div>
+                <div class="form-group">
+                    <label for="">Date font size: </label>
+                    <input type="text" class="forClockDate" data-prop="font-size" placeholder=""/>
+                </div>
+                <div class="form-group">
+                    <label for="">Clock background color: </label>
+                    <input type="text" class="forClock" data-prop="background-color" placeholder=""/>
+                </div>
+                <div class="form-group">
+                    <label for="">Clock border: </label>
+                    <input type="text" class="forClock" data-prop="border" placeholder=""/>
+                </div>
+                <div class="form-group">
+                    <label for="">Clock border radius: </label>
+                    <input type="text" class="forClock" data-prop="border-radius" placeholder=""/>
+                </div> </br>
+                <div class="form-group">
+                    <label for="">Clock Y: </label>
+                    <input type="text" class="forClock" data-prop="top" placeholder=""/>
+                </div>
+                <div class="form-group">
+                    <label for="">Clock X: </label>
+                    <input type="text" class="forClock" data-prop="left" placeholder=""/>
+                </div>
+
+                <button class="btn btn-info apply">Apply</button>
+            </div>
+      
+          </div>
+        </div>
+    </div>
+
+    <div class="clock theme-1">
+        <div class="dc">
+            <p></p>
+            <div>
+                <i></i>
+                <span></span>
+            </div>
+        </div>
+
+        <div class="date">
+
+        </div>
+    </div>
+    
+</body>
+</html>
