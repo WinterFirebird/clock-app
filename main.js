@@ -16,11 +16,14 @@ $(document).ready(function() {
     const breakSite = () => {
         if(ifMobile() == true) {
             //console.log("mobile device");
-            $("body").addClass("mobileBreak");
-            let childElement = document.createElement("p");
-            let childText = document.createTextNode("Unfortunately, the website isn't compatible with mobile devices");
-            childElement.appendChild(childText);
-            $("body.mobileBreak")[0].appendChild(childElement);
+            $("body, html").addClass("mobileBreak");
+            let p = document.createElement("p");
+            let pText = document.createTextNode("Unfortunately, the website isn't compatible with mobile devices :( Visit on desktop");
+            let div = document.createElement("div");
+            p.appendChild(pText);
+            div.appendChild(p);
+            div.className="mb-dialog";
+            $("body.mobileBreak")[0].appendChild(div);
         }
     }
 
@@ -547,6 +550,7 @@ $(document).ready(function() {
 
                 //for reversing the position of the language selector
                 let lfr = $(".lang-selector").css("right");
+                console.log(lfr);
                 $(".lang-selector").css({"right": "", "left": lfr});
                 $(".lang-selector").attr("dir", "ltr");
 

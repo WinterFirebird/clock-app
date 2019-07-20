@@ -38,23 +38,49 @@ font-family: 'Bangers', cursive;
     padding:0;
 }
 
+/* In case mobile phone is detected */
+
+html.mobileBreak {
+    width: 100%;
+    height: 100%;
+    overflow:hidden;
+}
+
+body.mobileBreak {
+    width: 100%;
+    height: 100%;
+    overflow:hidden;
+}
+
+.mb-dialog {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 999;
+    background: lightblue;
+}
+
+.mb-dialog p {
+    font-size: 25px;
+    padding: 20px;
+}
+
+
+/* Mainstream */
 
 html {
-    /*width:1920px;
+    width:1920px;
     height:950px;
     overflow:hidden;
-    position:relative;*/
+    position:relative;
     font-family: 'Roboto Condensed', sans-serif;
 
 }
 
 body {
-    width:1920px;
-    height:950px;
-    overflow:hidden;
-    position:relative;
     background-size:cover;
 }
+
 
 body.theme-1 {
     background-color:floralwhite;
@@ -93,7 +119,7 @@ body.newBackground {
     position:absolute;
     top:60px;
     right:20px;
-    z-index:999;
+    z-index:998;
     /**/
     background-color:rgba(0, 0, 0, 0.5);
     border-radius:7px;
@@ -128,7 +154,7 @@ body.newBackground {
     height:150px;
     /**/
     position:relative;
-    z-index:998;
+    z-index:997;
     top:-100px;
     left:0;    
 }
