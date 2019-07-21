@@ -13,18 +13,9 @@ $(document).ready(function() {
 
     const breakSite = () => {
         if(ifMobile() == true) {
-            //console.log("mobile device");
-   //         $("body, html").addClass("mobileBreak");
-            /*let p = document.createElement("p");
-            let pText = document.createTextNode("Unfortunately, the website isn't compatible with mobile devices :( Visit on desktop");
-            let div = document.createElement("div");
-            p.appendChild(pText);
-            div.appendChild(p);
-            div.className="mb-dialog";
-            $("body.mobileBreak")[0].appendChild(div);*/
-            $("html, body").css({"width": `${$(window).width()}px`, "height": `${$(window).height()}px`});
+            $("body, html").addClass("mobileBreak");
+            $(".lang-selector, .clock, .modal, .bar").css("display", "none");
             $(".mb-dialog").css("display", "block");
-
         }
     }
 
