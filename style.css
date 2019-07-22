@@ -46,6 +46,12 @@ html.mobileBreak {
     overflow:hidden;
 }
 
+/*
+body.mobileBreak {
+    width: 100%;
+    height: 100%;
+    overflow:hidden;
+}*/
 
 .mb-dialog {
     display:none;
@@ -89,11 +95,11 @@ body.theme-1 {
 }
 
 body.theme-2 {
-    background-image:url('stuff/backgrounds/background2.gif');
+    background-image:url('stuff/animated2.gif');
 }
 
 body.theme-3 {
-    background-image:url('stuff/backgrounds/background3.png');
+    background-image:url('stuff/static1.png');
 }
 
 body.theme-4 {
@@ -187,7 +193,7 @@ body.newBackground {
 .bar .bar-toggler {
     /*border:1px solid red;*/
     display:block;
-    content:url('stuff/arrows/arrow_down.png');
+    content:url('stuff/arrow_new1.png');
     width:50px;
     height:50px;
     opacity:0.9;
