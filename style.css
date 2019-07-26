@@ -95,23 +95,27 @@ body.theme-1 {
 }
 
 body.theme-2 {
-    background-image:url('stuff/animated2.gif');
+    background-image:url('resources/animated2.gif');
 }
 
 body.theme-3 {
-    background-image:url('stuff/static1.png');
+    background-image:url('resources/static1.png');
 }
 
 body.theme-4 {
-    background-image:url('stuff/backgrounds/background8.jpg');
+    background-image:url('resources/backgrounds/background8.jpg');
 }
 
 body.theme-5 {
-    background-image:url('stuff/backgrounds/background9.jpg');
+    background-image:url('resources/backgrounds/background9.jpg');
 }
 
 body.theme-6 {
-    background-image:url('stuff/backgrounds/background10.jpg');
+    background-image:url('resources/backgrounds/background10.jpg');
+}
+
+body.theme-7 {
+    background-image:url('resources/backgrounds/background11.gif');
 }
 
 body.newBackground {
@@ -143,7 +147,7 @@ body.newBackground {
     display:inline-block;
     margin:10px 10px;
     cursor:pointer;
-    opacity:0.4;
+    opacity:0.5;
     transition:all 0.2s ease-out;
 }
 
@@ -193,7 +197,7 @@ body.newBackground {
 .bar .bar-toggler {
     /*border:1px solid red;*/
     display:block;
-    content:url('stuff/arrow_new1.png');
+    content:url('resources/arrow_new1.png');
     width:50px;
     height:50px;
     opacity:0.9;
@@ -206,11 +210,11 @@ body.newBackground {
 }
 
 .bar .bar-toggler-u {
-    content:url('stuff/arrows/arrow_down.png');
+    content:url('resources/arrows/arrow_down.png');
 }
 
 .bar .bar-toggler-o {
-    content:url('stuff/arrows/arrow_up.png');
+    content:url('resources/arrows/arrow_up.png');
     opacity:0.6;
 }
 
@@ -417,8 +421,23 @@ body.newBackground {
     font-size:4rem;
 }
 
-.clock.theme-5 .dc div span {
+.clock.theme-6 .dc div span {
     color: rgb(6, 255, 242);
+}
+
+.clock.theme-7 {
+    border: 3px solid white;
+    border-radius: 15px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: rgb(237, 253, 219);
+    font-family: Bangers, cursive;
+    text-align: right;
+    left: 65%/*1250px*/;
+}
+
+.clock.theme-7 .dc div span {
+    font-size:80px;
+    color:#E99EF1;
 }
 
 .dc {
