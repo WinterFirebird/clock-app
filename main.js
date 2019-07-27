@@ -13,13 +13,12 @@ $(document).ready(function() {
 
     const breakSite = () => {
         if(ifMobile() == true) {
-            $("body, html").addClass("mobileBreak");
             $(".lang-selector, .clock, .modal, .bar").css("display", "none");
             $(".mb-dialog").css("display", "block");
         }
     }
 
-    breakSite();
+    //breakSite();
 
 
 
@@ -239,16 +238,17 @@ $(document).ready(function() {
 
     timeUpdate();
 
-
+    // the bar toggler button
     $('.bar-toggler-u').on('click', function() {
-        let barTop = $('.bar').css('top');
-        if(barTop == '-100px') {
-            $('.bar').css('top', '0px');
+        let barTop = $('.bar').offset().top;
+        //console.log(barTop);
+        if(barTop < 0) {
+            $('.bar').css("transform", "translateY(0)");
             $(this).removeClass('bar-toggler-u');
             $(this).addClass('bar-toggler-o');
             $('.bar').addClass('bar-o');
-        } else if (barTop == '0px') {
-            $('.bar').css('top', '-100px');
+        } else if (barTop == 0) {
+            $('.bar').css('transform', 'translateY(-100%)');
             $(this).removeClass('bar-toggler-o');
             $(this).addClass('bar-toggler-u');
             $('.bar').addClass('bar-u');
@@ -522,7 +522,7 @@ $(document).ready(function() {
                 $(".lang-selector").attr("dir", "rtl");
 
                 //for making the forms of the bar reverse
-                $(".bar div").css("float", "left")
+        //        $(".bar div").css("float", "left")
 
                 //for reversing the position of the bar toggler
                 let btr = $(".bar .bar-toggler").css("right");
@@ -547,7 +547,7 @@ $(document).ready(function() {
                 $(".lang-selector").attr("dir", "ltr");
 
                 //for making the forms of the bar reverse
-                $(".bar div").css("float", "right")
+        //        $(".bar div").css("float", "right")
 
                 //for reversing the position of the bar toggler
                 let btl = $(".bar .bar-toggler").css("left");

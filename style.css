@@ -40,18 +40,6 @@ font-family: 'Bangers', cursive;
 
 /* In case mobile phone is detected */
 
-html.mobileBreak {
-    width: 100%;
-    height: 100%;
-    overflow:hidden;
-}
-
-/*
-body.mobileBreak {
-    width: 100%;
-    height: 100%;
-    overflow:hidden;
-}*/
 
 .mb-dialog {
     display:none;
@@ -77,8 +65,8 @@ body.mobileBreak {
 /* Mainstream */
 
 html {
-    width:1920px;
-    height:950px;
+    width: 100%;
+    height: 100%;
     overflow:hidden;
     position:relative;
     font-family: 'Roboto Condensed', sans-serif;
@@ -163,12 +151,14 @@ body.newBackground {
 .bar {
     /*border:1px solid yellow;*/
     width:100%;
-    height:150px;
+    min-height:150px;
     /**/
     position:relative;
     z-index:997;
-    top:-100px;
-    left:0;    
+    left:0;  
+    transform:translateY(-100%); 
+    /**/  
+    background-color: rgba(255, 255, 255, 0.7);
 }
 
 .bar-o, .bar-u {
@@ -177,13 +167,17 @@ body.newBackground {
 
 .bar .forms {
     width: 100%;
-    height: 95px;
+    min-height: 95px;
     /**/
     margin: 0;
     padding: 10px 40px;
     /**/
-    overflow: hidden;
-    background-color: rgba(255, 255, 255, 0.7);
+    /*overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.7);*/
+}
+
+.bar .form {
+    min-height:59px
 }
 
 .bar .forms input {
@@ -203,10 +197,12 @@ body.newBackground {
     opacity:0.9;
     /**/
     position:absolute;
-    bottom:0;
+    bottom:-50px;
     left:70px;
+    transition:all 0.3s ease-out;
     /**/
     overflow:hidden;
+    
 }
 
 .bar .bar-toggler-u {
@@ -221,11 +217,13 @@ body.newBackground {
 .bar div {
     margin-left:15px;
     margin-right:15px;
-    float:left;
+    margin-top:3px;
+    /*float:left;*/
+    display:inline-block;
 }
 
 .bar button {
-    margin-top:17px;
+    /*margin-top:17px;*/
 }
 
 .bar .intro {
@@ -245,7 +243,7 @@ body.newBackground {
 /* MODAL*/
 
 
-.modal .form-group {
+.modal .form {
     display:inline-block;
     margin:10px;
     color:gray;
@@ -255,16 +253,16 @@ body.newBackground {
     color:rgba(255, 0, 0, 0.7)
 }
 
-.modal .form-group label {
+.modal .form label {
     color:rgba(0, 0, 0, 0.7);
 }
 
-.modal .form-group input {
+.modal .form input {
     color:black;
     padding:5px;
 }
 
-.modal .form-group input::placeholder {
+.modal .form input::placeholder {
     color:rgba(0, 0, 0, 0.4);
 }
 
