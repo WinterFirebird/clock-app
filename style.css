@@ -222,10 +222,6 @@ body.newBackground {
     display:inline-block;
 }
 
-.bar button {
-    /*margin-top:17px;*/
-}
-
 .bar .intro {
     font-family: 'Roboto', sans-serif;
     font-weight:bold;
