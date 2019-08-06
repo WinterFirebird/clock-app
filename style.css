@@ -54,11 +54,11 @@ font-family: 'Bangers', cursive;
 }
 
 .mb-dialog p {
-    font-size: 23px;
+    font-size: 1.64rem;
 }
 
 .mb-dialog span {
-    font-size: 70px;
+    font-size: 5rem;
 }
 
 
@@ -70,6 +70,7 @@ html {
     overflow:hidden;
     position:relative;
     font-family: 'Roboto Condensed', sans-serif;
+    font-size: 10px;
 
 }
 
@@ -166,18 +167,40 @@ body.newBackground {
 }
 
 .bar .forms {
-    width: 100%;
-    min-height: 95px;
+    background-color: rgba(255, 255, 255, 0.7);
+    width:100%;
     /**/
-    margin: 0;
-    padding: 10px 40px;
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    align-items:center;
     /**/
-    /*overflow: hidden;
-    background-color: rgba(255, 255, 255, 0.7);*/
+    margin:0;
+    padding: 20px 40px;
+
+}
+
+.bar .forms div {
+    margin: 5px 15px;
+    display:inline-block;
 }
 
 .bar .form {
-    min-height:59px
+    min-height:59px;
+    /*vertical-align:text-bottom;*/
+}
+
+.bar .form-table {
+    display:table !important;
+}
+
+.bar .form-table .wrapper {
+    display:table-cell;
+    vertical-align:bottom;
+}
+
+.bar .forms label {
+    font-size:1.3rem;
 }
 
 .bar .forms input {
@@ -185,7 +208,16 @@ body.newBackground {
 }
 
 .bar .forms select {
-    width:150px;
+    box-sizing:content-box;
+    min-width:150px;
+    min-height:20px;
+    font-size:1.3rem;
+    padding:2px 4px;
+
+}
+
+.bar .forms button {
+    font-size:1.3rem;
 }
 
 .bar .bar-toggler {
@@ -214,18 +246,11 @@ body.newBackground {
     opacity:0.6;
 }
 
-.bar div {
-    margin-left:15px;
-    margin-right:15px;
-    margin-top:3px;
-    /*float:left;*/
-    display:inline-block;
-}
 
 .bar .intro {
     font-family: 'Roboto', sans-serif;
     font-weight:bold;
-    font-size:1.5rem;
+    font-size:1.3rem;
     text-align:Center;
     line-height:30px;
     padding:10px;
@@ -235,13 +260,23 @@ body.newBackground {
 
 
 
-
 /* MODAL*/
 
+.modal {
+    font-size:1.3rem;
+}
+
+.modal .modal-header {
+    font-size:1.5rem;
+}
+
+.modal h3, .modal .alert {
+    font-size:1.4rem;
+}
 
 .modal .form {
     display:inline-block;
-    margin:10px;
+    margin:1.6% /*10px*/;
     color:gray;
 }
 
@@ -304,11 +339,11 @@ body.newBackground {
 }
 
 .clock.theme-1 .dc p {
-    font-size:110px;
+    font-size:10.4rem;
 }
 
 .clock.theme-1 .dc div {
-    font-size:4rem;
+    font-size:5.3rem;
 }
 
 .clock.theme-1 .dc div span {
@@ -316,18 +351,20 @@ body.newBackground {
 }
 
 .clock.theme-1 .date {
-    font-size:30px;
+    font-size:2.8rem;
 }
 
 .clock.theme-2 {
     font-family: 'Pacifico', cursive;
     background-color: rgba(140, 140, 140, 0.3);
-    border-radius: 30px;
+    border-radius: 2.14rem;
     border: 1px solid white;
     text-align: center;
     color: #f0f8ff;
     min-width:700px;
     min-height:400px;
+    /**/
+    padding: 2% 8% 4% 8%;
 }
 
 .clock.theme-2 .dc div {
@@ -365,6 +402,8 @@ body.newBackground {
     text-align:left;
     min-width:700px;
     min-height:400px;
+    /**/
+    padding:2.5% 16% 4% 2%;
 }
 
 .clock.theme-4 .dc div {
@@ -386,10 +425,12 @@ body.newBackground {
     min-width: 500px;
     min-height: 400px;
     top: 70%;
+    /**/
+    padding: 2% 4% 3% 4%;
 }
 
 .clock.theme-5 .dc {
-    margin-top:50px;
+    margin-top:3.57rem;
 }
 
 .clock.theme-5 .dc div {
@@ -409,6 +450,8 @@ body.newBackground {
     text-align: left;
     top:42%;
     left:40%;
+    /**/
+    padding: 1% 17% 2% 1.5%;
 }
 
 .clock.theme-6 .dc div {
@@ -427,10 +470,12 @@ body.newBackground {
     font-family: Bangers, cursive;
     text-align: right;
     left: 65%/*1250px*/;
+    /**/
+    padding: 1.2% 1.1% 2% 14%;
 }
 
 .clock.theme-7 .dc div span {
-    font-size:80px;
+    font-size:5.7rem;
     color:#E99EF1;
 }
 
@@ -489,3 +534,28 @@ body.newBackground {
 /* don't forget to credit the author of the flags with this code <div>Icons made by <a href="https://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/"             title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/"             title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div> */ 
 
 
+
+/* RESPONSIVE */
+
+
+@media screen and (min-width:2560px) {
+    .bar .forms div {
+        margin: 0.1% 0.8%;
+    }
+}
+
+
+/* Macbook Pro 13.3' Retina display  */
+@media screen and (min-width:2560px) {
+    html {
+        font-size:17px;
+    }
+}
+
+
+/* Macbook Pro 15.4' Retina display  */
+@media screen and (min-width:2880px) {
+    html {
+        font-size:19px;
+    }
+}

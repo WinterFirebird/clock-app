@@ -2,7 +2,7 @@
 
 $(document).ready(function() {
 
-    // this shitty code was written with love by Arman ...(*￣０￣)ノ
+    // this code was written with love by Arman ...(*￣０￣)ノ
 
 
     /* checks whether it is a mobile device or not */
@@ -18,7 +18,7 @@ $(document).ready(function() {
         }
     }
 
-    breakSite();
+    //breakSite();
 
 
 
@@ -254,7 +254,7 @@ $(document).ready(function() {
             $('.bar').addClass('bar-u');
         }
     })
-    
+
     
 
     // for selecting one of the default themes
@@ -273,6 +273,16 @@ $(document).ready(function() {
         $('body, .clock').removeClass(previousVal).addClass(newVal);
         setTimeout(setValues, bcUp);
         $(this).blur();
+
+        // turn off tools if any theme other than the first selected
+        if(newVal !== "theme-1") {
+            let selects = $(".bar select");
+
+            for(i=1; i <= selects.length; i++) {
+                console.log(selects[i]);
+                selects[i].attr("disabled", "disabled");  //this doesn't work, returnes "...is not a function"
+            }
+        }
     })
 
     // for selecting an image background
@@ -534,7 +544,7 @@ $(document).ready(function() {
 
         } else if (dir == "rtl") {
 
-            //for checking if it is already ltr or not
+            //for checking if it is already rtl or not
             if($("body").attr("dir") == "ltr") {
 
                 //set the body direction

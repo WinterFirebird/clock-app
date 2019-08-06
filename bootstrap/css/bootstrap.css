@@ -204,12 +204,12 @@ th {
   box-sizing: border-box;
 }
 html {
-  font-size: 10px;
+  /*font-size: 10px;*/ /* I intentionally commented it out */
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 14px;
+  /*font-size: 14px;*/ /* I intentionally commented it out */
   line-height: 1.42857143;
   color: #333333;
   background-color: #ffffff;
@@ -817,7 +817,7 @@ select[multiple].input-lg {
   background-image: none;
   border: 1px solid transparent;
   padding: 6px 12px;
-  font-size: 14px;
+  /*font-size: 14px;*/ /* modified */
   line-height: 1.42857143;
   border-radius: 4px;
   -webkit-user-select: none;
@@ -1764,7 +1764,7 @@ a.badge:focus {
 }
 .close {
   float: right;
-  font-size: 21px;
+  font-size: 2.5rem /* 21px */ /* modified*/ ;
   font-weight: bold;
   line-height: 1;
   color: #000000;
@@ -1857,7 +1857,7 @@ button.close {
   opacity: 0.5;
 }
 .modal-header {
-  padding: 15px;
+  padding: 3%; /* modified */
   border-bottom: 1px solid #e5e5e5;
 }
 .modal-header .close {
@@ -1869,7 +1869,7 @@ button.close {
 }
 .modal-body {
   position: relative;
-  padding: 15px;
+  padding: 3%; /* modified */
 }
 .modal-footer {
   padding: 15px;
@@ -1895,8 +1895,8 @@ button.close {
 }
 @media (min-width: 768px) {
   .modal-dialog {
-    width: 600px;
-    margin: 30px auto;
+    width: 43% !important; /* modified */
+    margin: 4% auto; /* modified */
   }
   .modal-content {
     -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
