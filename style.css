@@ -228,7 +228,11 @@ body.newBackground {
     transition:all 0.3s ease-out;
     /**/
     overflow:hidden;
-    
+}
+
+
+.bar .bar-toggler::selection { /* to remove the blue glow while clicking on it in firefox */
+    outline:none;
 }
 
 .bar .bar-toggler-u {
