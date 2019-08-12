@@ -11,11 +11,8 @@
     
     <!-- bootstrap shit -->
     <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
-  <!--  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
--->
+    <!-- micons -->
+    <link rel="stylesheet" href="micon/css/micon.min.css">
 
 
 
@@ -25,39 +22,45 @@
     <script src="bootstrap/js/bootstrap.min.js"></script>
 
 
-    <title>Clock (git)</title>
+    <title>Digital Clock</title>
+    <link rel="shortcut icon" type="icon/icon-x" href="favicon.ico">
 </head>
 <body class="body theme-1" dir="ltr">
 
     <div class="lang-selector" dir="rtl">
-        <img class="flag-picker selected" alt="en" data-dir="ltr" src="resources/flags/united-kingdom.png" width="40px" height="40px"/>
-        <img class="flag-picker" alt="hy" data-dir="ltr" src="resources/flags/armenia.png" width="40px" height="40px"/>
-        <img class="flag-picker" alt="fr" data-dir="ltr" src="resources/flags/france.png" width="40px" height="40px"/>
-        <img class="flag-picker" alt="ru" data-dir="ltr" src="resources/flags/russia.png" width="40px" height="40px"/>
-        <img class="flag-picker" alt="ar" data-dir="rtl" src="resources/flags/arabic.png" width="40px" height="40px"/>
+        <img class="flag-picker selected" alt="en" data-dir="ltr" src="resources/flags/united-kingdom.png"/>
+        <img class="flag-picker" alt="hy" data-dir="ltr" src="resources/flags/armenia.png"/>
+        <img class="flag-picker" alt="fr" data-dir="ltr" src="resources/flags/france.png"/>
+        <img class="flag-picker" alt="ru" data-dir="ltr" src="resources/flags/russia.png"/>
+        <img class="flag-picker" alt="ar" data-dir="rtl" src="resources/flags/arabic.png"/>
     </div>
 
     <div class="bar">
         <div class="forms">
-            <div class="form">
+            <div class="form no-mobile">
                 <label for="theme">Choose a theme: </label>
                 <select class="form-control theme-selector" id="theme" style="width:150px">
                     <option value="theme-1" selected>Theme 1</option>
                     <option value="theme-2">Theme 2</option>
                     <option value="theme-3">Theme 3</option>
                     <option value="theme-4">Theme 4</option>
-                    <option value="theme-5">Theme 5</option>
+                    <option value="theme-5" class="no-tablet">Theme 5</option>
                     <option value="theme-6">Theme 6</option>
-                    <option value="theme-7">Theme 7</option>
+                    <option value="theme-7" class="no-tablet">Theme 7</option>
                 </select>
             </div>
 
             <div class="intro">
-                ← Pick one of the themes<br>
-                Or create your own →
+                by <span>Arman Grigoryan</span><br>
+                <a href="https://github.com/WinterFirebird" target="_blank">
+                    <i class="mi mi-github"></i>
+                </a>
+                <a href="https://www.facebook.com/arman.grigoryan.7311" target="_blank">
+                    <i class="mi mi-facebook-square"></i>
+                </a>
             </div>
 
-            <div class="form">
+            <div class="form no-mobile">
                 <label for="c-ibackground">Background image: </label>
                 <select class="form-control ibackground-selector custom-form" id="c-ibackground">
                     <option value="resources/backgrounds/background1.gif">Background 1</option>
@@ -65,30 +68,30 @@
                     <option value="resources/backgrounds/background3.png">Background 3</option>
                     <option value="resources/backgrounds/background4.jpg">Background 4</option>
                     <option value="resources/backgrounds/background5.jpg">Background 5</option>
-                    <option value="resources/backgrounds/background6.jpg">Background 6</option>
+                    <option value="resources/backgrounds/background6.jpg" class="no-tablet">Background 6</option>
                     <option value="resources/backgrounds/background7.jpg">Background 7</option>
                     <option value="resources/backgrounds/background8.jpg">Background 8</option>
-                    <option value="resources/backgrounds/background9.jpg">Background 9</option>
-                    <option value="resources/backgrounds/background11.gif">Background 10</option>
+                    <option value="resources/backgrounds/background9.jpg" class="no-tablet">Background 9</option>
+                    <option value="resources/backgrounds/background11.gif" class="no-tablet">Background 10</option>
                 </select>
             </div>
 
             <div class="form">
                 <label for="c-cbackground">Background color: </label>
                 </br>
-                <input type="color" id="c-cbackground" class="custom-form cbackground-selector" style="height:30px;"/> 
+                <input type="color" id="c-cbackground" class="custom-form cbackground-selector" style="min-height:30px;"/> 
             </div>
 
             <div class="form">
                 <label for="c-color">Font color: </label>
                 </br>
-                <input type="color" id="c-color" class="custom-form color-selector" style="height:30px;"/> 
+                <input type="color" id="c-color" class="custom-form color-selector" style="min-height:30px;"/> 
             </div>
 
             <div class="form">
                 <label for="c-scolor">Seconds' font color: </label>
                 </br>
-                <input type="color" id="c-scolor" class="custom-form scolor-selector" style="height:30px;"/> 
+                <input type="color" id="c-scolor" class="custom-form scolor-selector" style="min-height:30px;"/> 
             </div>
 
             <div class="form">
@@ -118,19 +121,19 @@
                 </select>
             </div>
 
-            <div class="form form-table">
+
+            <div class="form table no-mobile">
                 <div class="wrapper">
-                    <button type="button" class="btn btn-light format-switcher">
-                        24/12
+                    <button type="button" class="btn btn-primary advanced-trigger" data-toggle="modal" data-target="#advanced">
+                        Advanced options...
                     </button>
                 </div>
-                
             </div>
 
-            <div class="form form-table">
+            <div class="form table">
                 <div class="wrapper">
-                    <button type="button" class="btn btn-light advanced-trigger" data-toggle="modal" data-target="#advanced">
-                        Advanced options...
+                    <button type="button" class="btn btn-primary format-switcher">
+                        24/12
                     </button>
                 </div>
             </div>

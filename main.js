@@ -276,11 +276,20 @@ $(document).ready(function() {
 
         // turn off tools if any theme other than the first selected
         if(newVal !== "theme-1") {
-            let selects = $(".bar select");
+            let selects = $(".bar .custom-form");
 
-            for(i=1; i <= selects.length; i++) {
-                console.log(selects[i]);
-                selects[i].attr("disabled", "disabled");  //this doesn't work, returnes "...is not a function"
+            for (let ob of selects) {
+                $(ob).parent().css("opacity", "0.7");
+                $(ob).attr("disabled", "disabled");
+                $(".advanced-trigger").attr("disabled", "disabled")
+            }
+        } else if(newVal == "theme-1") {
+            let selects = $(".bar .custom-form");
+
+            for (let ob of selects) {
+                $(ob).parent().css("opacity", "1");
+                $(ob).removeAttr("disabled");
+                $(".advanced-trigger").removeAttr("disabled");
             }
         }
     })
@@ -409,7 +418,7 @@ $(document).ready(function() {
     const translations = {
         en: {
             labels: ["Choose a theme: ", "Background image: ", "Background color: ", "Font color: ", "Seconds' font color: ", "Alignment: ", "Font family: "],
-            intro: "← Pick one of the themes <br> Or create your own →", 
+          //  intro: '← Pick one of the themes <br> Or create your own →', 
             alignment: ["Left", "Center", "Right"],
             theme: 'Theme',
             background: 'Background',
@@ -423,7 +432,7 @@ $(document).ready(function() {
         },
         hy: {
             labels: ["Ընտրեք թեմա: ", "Ֆոնի նկար: ", "Ֆոնի գույն: ", "Տառատեսակի գույնը: ", "Վայրկենացույցի տ-ի գույնը: ", "Տողաշտկում: ", "Տառատեսակը: "],
-            intro: "← Ընտրեք թեմաներից մեկը <br> Կամ ստեղծեք ձերը →", 
+         //   intro: "← Ընտրեք թեմաներից մեկը <br> Կամ ստեղծեք ձերը →", 
             alignment: ["Ձախից", "Մեջտեղից", "Աջից"],
             theme: 'Թեմա',
             background: 'Ֆոն',
@@ -437,7 +446,7 @@ $(document).ready(function() {
         },
         fr: {
             labels: ["Choisissez un thème: ", "Image de fond: ", "Couleur de fond: ", "Couleur de la police: ", "Couleur des secondes: ", "Alignement: ", "Famille de polices: "],
-            intro: "← Choisissez l'un des thèmes <br> Ou créez le vôtre →",
+         //   intro: "← Choisissez l'un des thèmes <br> Ou créez le vôtre →",
             alignment: ["La gauche", "La centre", "La droite"],
             theme: 'Thème',
             background: 'Fond',
@@ -452,7 +461,7 @@ $(document).ready(function() {
         },
         ru: {
             labels: ["Выберите тему: ", "Фоновое изображение: ", "Цвет фона: ", "Цвет шрифта: ", "Цвет шрифта секунд: ", "Выравнивание: ", "Шрифт: "],
-            intro: "← Выберите одну из тем <br> Или собирайте свой →", 
+         //   intro: "← Выберите одну из тем <br> Или собирайте свой →", 
             alignment: ["Слева", "С середины", "Справа"],
             theme: 'Тема',
             background: 'Фон',
@@ -466,7 +475,7 @@ $(document).ready(function() {
         },
         ar: {
             labels: ["اختيار موضوع ", "الصورة الخلفية ", "لون الخلفية ", "لون الخط ", "لون خط الثواني ", "انتقام ", "خط العائلة "],
-            intro: "← اختيار واحد من الموضوعات <br> أو إنشاء الخاصة بك →", 
+         //   intro: "← اختيار واحد من الموضوعات <br> أو إنشاء الخاصة بك →", 
             alignment: ["اليسار", "مركز", "حق"],
             theme: 'موضوع',
             background: 'خلفية',
@@ -491,7 +500,7 @@ $(document).ready(function() {
             $(this).html(translations[lang].labels[i]);
             i++;
         });
-        $('.intro').html(translations[lang].intro);
+      //  $('.intro').html(translations[lang].intro);
         $('#c-align option').each(function(i=0) {
             $(this).html(translations[lang].alignment[i]);
             i++;
@@ -532,7 +541,6 @@ $(document).ready(function() {
                 $(".lang-selector").attr("dir", "rtl");
 
                 //for making the forms of the bar reverse
-        //        $(".bar div").css("float", "left")
 
                 //for reversing the position of the bar toggler
                 let btr = $(".bar .bar-toggler").css("right");
@@ -557,7 +565,6 @@ $(document).ready(function() {
                 $(".lang-selector").attr("dir", "ltr");
 
                 //for making the forms of the bar reverse
-        //        $(".bar div").css("float", "right")
 
                 //for reversing the position of the bar toggler
                 let btl = $(".bar .bar-toggler").css("left");
@@ -578,7 +585,7 @@ $(document).ready(function() {
 
     // attaching an event on the language flags
     $(".flag-picker").on('click', function(){
-        //console.log('ye');
+        
         if($(this).hasClass('selected') == false) {
             let locale = $(this).attr("alt");
             let direction = $(this).attr("data-dir");

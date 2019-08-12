@@ -70,7 +70,6 @@ html {
     overflow:hidden;
     position:relative;
     font-family: 'Roboto Condensed', sans-serif;
-    font-size: 10px;
 
 }
 
@@ -113,12 +112,10 @@ body.newBackground {
 
 .lang-selector {
     display:block;
-    width:60px;
-    height:60px;
     overflow:hidden;
     /**/
     position:absolute;
-    top:60px;
+    bottom:60px;
     right:20px;
     z-index:998;
     /**/
@@ -128,20 +125,16 @@ body.newBackground {
     transition:all 0.4s ease-out;
 }
 
-.lang-selector:hover {
-    width:320px;
-}
 
 .lang-selector .flag-picker {
     display:inline-block;
-    margin:10px 10px;
     cursor:pointer;
-    opacity:0.5;
+    opacity:0.7;
     transition:all 0.2s ease-out;
 }
 
 .lang-selector .flag-picker:hover {
-    opacity:0.7;
+    opacity:1;
 }
 
 .lang-selector .flag-picker.selected {
@@ -185,16 +178,17 @@ body.newBackground {
     display:inline-block;
 }
 
+.bar .forms div.table {
+    display:table;
+}
+
 .bar .form {
     min-height:59px;
     /*vertical-align:text-bottom;*/
 }
 
-.bar .form-table {
-    display:table !important;
-}
 
-.bar .form-table .wrapper {
+.bar .form.table .wrapper {
     display:table-cell;
     vertical-align:bottom;
 }
@@ -255,6 +249,22 @@ body.newBackground {
     line-height:30px;
     padding:10px;
 }
+
+.bar .intro span {
+    color:dimgray;
+}
+
+.bar .intro a {
+    color:black;
+    text-decoration:none;
+    font-size:2rem;
+    margin:2px;
+}
+
+.bar .intro a:hover {
+    color:gray;
+}
+
 
 
 
@@ -334,8 +344,8 @@ body.newBackground {
     font-family: 'Roboto Condensed', sans-serif;
     text-align:left;
     color:black;
-    min-width:700px;
-    min-height:400px;
+  /*  min-width:700px;
+    min-height:400px; */
 }
 
 .clock.theme-1 .dc p {
@@ -538,9 +548,119 @@ body.newBackground {
 /* RESPONSIVE */
 
 
-@media screen and (min-width:2560px) {
-    .bar .forms div {
-        margin: 0.1% 0.8%;
+/* smallest screen */
+
+@media screen and (min-width: 1px) {
+    html {
+        font-size:5px;
+    }
+
+    .bar .forms input {
+        width: 70px;
+    }
+
+    .lang-selector {
+        width:42px;
+        height:42px;
+    }
+
+    .lang-selector:hover {
+        width:224px;
+    }
+
+    .lang-selector .flag-picker {
+        width:28px;
+        height:28px;
+        margin:7px 7px;
+    }
+}
+
+/* average-screen mobile devices */
+
+@media screen and (min-width: 350px) {
+    html {
+        font-size:8px;
+    }
+
+    .bar .forms input {
+        width: 100px;
+    }
+
+    .lang-selector {
+        width:48px;
+        height:48px;
+    }
+
+    .lang-selector:hover {
+        width:256px;
+    }
+
+    .lang-selector .flag-picker {
+        width:32px;
+        height:32px;
+        margin:8px 8px;
+    }
+}
+
+
+/* larger-screen mobile devices */ 
+
+@media screen and (min-width: 400px) {
+    .bar .forms input {
+        width: 120px;
+    }
+
+    .lang-selector {
+        width:60px;
+        height:60px;
+    }
+
+    .lang-selector:hover {
+        width:320px;
+    }
+
+    .lang-selector .flag-picker {
+        width:40px;
+        height:40px;
+        margin:10px 10px;
+    }
+}
+
+
+/* Mobile devices on the whole*/
+
+@media screen and (max-width: 768px) {
+    .no-mobile {
+       display:none !important;
+    }
+
+    html {
+        font-size:8px;
+    }
+
+    .bar {
+        background-color: rgba(255, 255, 255, 0.9);
+    }
+
+    .clock {
+        min-width:100%;
+        min-width:100%;
+    }
+}
+
+/* if greater than iPad -----> */
+
+@media screen and (min-width: 768px) {
+    html {
+        font-size:10px;
+    }
+}
+
+/* anything less than iPad Pro, iPad Pro included */ 
+
+@media screen and (max-width: 1024px) {
+    .no-tablet {
+        display: none;
     }
 }
 
@@ -549,6 +669,25 @@ body.newBackground {
 @media screen and (min-width:2560px) {
     html {
         font-size:17px;
+    }
+
+    .bar .forms div {
+        margin: 0.1% 0.8%;
+    }
+
+    .lang-selector {
+        width:90px;
+        height:90px;
+    }
+
+    .lang-selector:hover {
+        width:480px;
+    }
+
+    .lang-selector .flag-picker {
+        width:60px;
+        height:60px;
+        margin:15px 15px;
     }
 }
 
