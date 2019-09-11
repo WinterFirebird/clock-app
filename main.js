@@ -233,7 +233,7 @@ $(document).ready(function() {
         };
     
     
-        setTimeout(timeUpdate, 500);
+        setTimeout(timeUpdate, 200);
     }
 
     timeUpdate();
